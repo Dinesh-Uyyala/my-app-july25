@@ -1,0 +1,33 @@
+<h1>Data Binding</h1>
+<!-- event binding -->
+ <!-- <button (click)="greeting()">Click me!</button><br>
+
+ <input type="text" placeholder="enter name" (keyup)="typing()"><br>
+
+ <select (change)="fruits()">
+    <option>apple</option>
+    <option>banana</option>
+    <option>strawberry</option>
+    <option>mango</option>
+    <option>kiwi</option>
+    <option>cherry</option>
+ </select><br> -->
+
+ <!-- property binding -->
+  <!-- <button [disabled]="isDataPresent">reset</button><br>
+  <img [src]="image_url" alt=""><br> -->
+
+  <!-- interpolation -->
+<!-- <h2>{{name}}</h2>
+<h3>{{age}}</h3>  -->
+
+
+<!-- Two way data binding -->
+ <!-- <input type="text" [(ngModel)]="mobile" (keyup)="typing()"> -->
+
+
+ <h4>Calculator</h4>
+ <h5>{{sum}}</h5>
+ <input type="number" [(ngModel)]="num1" placeholder="enter number 1"><br>
+ <input type="number" [(ngModel)]="num2" placeholder="enter number 2"><br>
+ <button (click)="addition()" [disabled]="!num1 || !num2">Add</button>

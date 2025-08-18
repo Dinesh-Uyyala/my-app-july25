@@ -16,3 +16,23 @@ Git Hub:
     ======
         git remote -v
 
+3) adding files(changes->staged changes)
+    git add .
+    git commit -m "commit message"
+    git push --set-upstream origin master -f (for the first time)
+
+
+
+Topics:
+=======
+
+
+
+
+
+
+
+Heirarchy:
+===========
+
+
