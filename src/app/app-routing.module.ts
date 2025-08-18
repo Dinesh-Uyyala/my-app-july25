@@ -6,6 +6,7 @@ import { ErrorComponent } from './error/error.component';
 import { HomeComponent } from './home/home.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 const routes: Routes = [
   // default routing
@@ -15,6 +16,7 @@ const routes: Routes = [
     {path:'home',component:HomeComponent},
     {path:'gallery',component:GalleryComponent},
     {path:'data-binding',component:DataBindingComponent},
+    {path:'directives',component:DirectivesComponent},
   ]},//parent routing
   
   {path:'**',component:ErrorComponent},//wildcard/error routing

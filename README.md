@@ -36,3 +36,16 @@ Heirarchy:
 ===========
 
 
+Directives: used to alter DOM
+===========
+1) Structural directives:
+        *ngFor & *ngIf
+
+2) Attribute directives:
+        ngClass & ngStyle
+
+
+Pipes: used to alter data format
+======
+    | uppercase
+    | lowercase
