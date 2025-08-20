@@ -1,0 +1,62 @@
+<h1>Employee Data</h1>
+<!-- <h3>Today: {{date  }}</h3>
+<h3>Today's Date: {{date |date:'dd-MM-yyyy' }}</h3>
+<h3>Time: {{date |date:'hh:mm' }}</h3> -->
+
+<button class="btn btn-primary" (click)="sort()">Package Low to High</button>
+ 
+<select [(ngModel)]="roleFilter" (change)="filter()">
+    <option value="UIDeveloper">UI Developer</option>
+    <option value="Testing Engineer">Testing Engineer</option>
+    <option value="Data engineer">Data Engineer</option>
+    <option value="Software Developer">SoftwareDeveloper</option>
+</select>
+
+<input type="text" [(ngModel)]="name" (keyup)="nameFilter()" placeholder="Enter name to search">
+
+<button class="btn btn-warning" (click)="bonus()">Add 30K Bonus</button>
+
+<button class="btn btn-info" (click)="costToCompany()">Cost to the company</button><br>
+
+
+
+
+<label>Name:</label>
+<input type="text" [(ngModel)]="empName"><br>
+<label>Experience:</label>
+
+<input type="number" [(ngModel)]="experience"><br>
+<label>Package:</label>
+<input type="number" [(ngModel)]="package"><br>
+<label>Role:</label>
+<input type="text" [(ngModel)]="role"><br>
+<button class="btn btn-primary" (click)="addRecord()">add record</button>
+
+
+
+
+<table class="table table-success">
+    <thead>
+        <tr>
+            <th>S No</th>
+            <th>Name</th>
+            <th>Experience</th>
+            <th>Package</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr  *ngFor="let employee of employees;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{employee.name}}</td>
+                <td [ngStyle]="{'color':employee.experience>=5?'green':'red'}">{{employee.experience}}</td>
+                <td [ngClass]="{'first':employee.package<500000,'second':(employee.package>=500000)&&(employee.package<1000000),
+                        'third':employee.package>1000000}">{{employee.package |currency }}</td>
+                <td>{{employee.role}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="delete(i)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+</table>

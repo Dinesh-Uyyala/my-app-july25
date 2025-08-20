@@ -49,3 +49,7 @@ Pipes: used to alter data format
 ======
     | uppercase
     | lowercase
+    | currency
+    | date:'hh:mm'
+    | date:'dd-MM-yyyy'
+
