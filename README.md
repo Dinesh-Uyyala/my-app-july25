@@ -53,3 +53,19 @@ Pipes: used to alter data format
     | date:'hh:mm'
     | date:'dd-MM-yyyy'
 
+
+
+
+Possible API Calls:
+===================
+
+1) all details          get               get(url)
+2) specific data        get               get(url/id)
+3) filtering            get               get(url?filter=term)
+4) sorting              get               get(url?sortBy=column&order=asc/desc)
+5) pagination           get               get(url?limit=limit&page=page)
+
+
+6) create              post                  post(url,data)
+7) update              put                   put(url/id,data)
+8) delete              delete                delete(url/id)
