@@ -69,3 +69,43 @@ Possible API Calls:
 6) create              post                  post(url,data)
 7) update              put                   put(url/id,data)
 8) delete              delete                delete(url/id)
+
+
+
+
+Forms:
+======
+1) Template Driven Forms --> ngModel
+2) Reactive Forms
+    1) FormGroup
+    2) Nested FormGroup
+    3) Dynamic Forms
+    4) Form Array
+    5) Form Validations
+    6) Custom Validations
+
+
+
+
+
+
+Form validations:
+=================
+
+ts:
+===
+  name:new FormControl('',[Validators.required,Validators.minLength(6),Validators.maxLength(10)])
+
+html:
+=====
+    <div *ngIf="CONTROL?.touched && CONTROL?.invalid">
+        <p *ngIf="CONTROL?.errors?.['required']">Name is Required</p>
+        <p *ngIf="CONTROL?.errors?.['minlength']">Name is minimum 6  characters</p>
+        <p *ngIf="CONTROL?.errors?.['maxlength']">Name is maximum of 10 characters</p>
+    </div>
+
+Control:
+========
+1) FormGroup : userForm.get('name')
+2) Nested FormGroup: userForm.get('address')?.get('pin')
+3) FormArray: cardsFormArray.controls[i]?.get('expiry')

@@ -9,6 +9,8 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 const routes: Routes = [
   // default routing
@@ -21,6 +23,8 @@ const routes: Routes = [
     {path:'directives',component:DirectivesComponent},
     {path:'employee',component:EmployeeComponent},
     {path:'vehicles',component:VehiclesComponent},
+    {path:'create-vehicle',component:CreateVehicleComponent},
+    {path:'create-user',component:CreateUserComponent},
   ]},//parent routing
   
   {path:'**',component:ErrorComponent},//wildcard/error routing
