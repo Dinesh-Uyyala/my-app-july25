@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ErrorComponent } from './error/error.component';
@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'dashboard',component:DashboardComponent,canActivate:[AuthenticationGuard],children:[
     // child routing
-    {path:'home',component:HomeComponent},
+    {path:'',component:HomeComponent},
     {path:'gallery',component:GalleryComponent},
     {path:'data-binding',component:DataBindingComponent},
     {path:'directives',component:DirectivesComponent},
@@ -33,13 +33,18 @@ const routes: Routes = [
     {path:'edit-vehicle/:id',component:CreateVehicleComponent},
     {path:'sibling',component:Sibling1Component},
     {path:'parent',component:ParentComponent},
+    {
+    path: 'payments',
+    loadChildren: () => import('./payments/payments.module')
+      .then(m => m.PaymentsModule)
+  }
   ]},//parent routing
   
   {path:'**',component:ErrorComponent},//wildcard/error routing
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{preloadingStrategy:PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
