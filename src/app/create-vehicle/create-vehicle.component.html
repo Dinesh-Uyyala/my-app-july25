@@ -1,4 +1,6 @@
-<h1>Create Vehicle</h1>
+<h1 *ngIf="!id">Create Vehicle</h1>
+<h1 *ngIf="id">Edit Vehicle</h1>
+<!-- <h1>{{id ? 'Edit Vehicle':'Create Vehicle'}}</h1> -->
 
 <form [formGroup]="vehicleForm">
     <label>Vehicle Name:</label>

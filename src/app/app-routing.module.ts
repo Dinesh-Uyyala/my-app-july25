@@ -11,11 +11,15 @@ import { EmployeeComponent } from './employee/employee.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { AuthenticationGuard } from './authentication.guard';
+import { Sibling1Component } from './sibling1/sibling1.component';
+import { ParentComponent } from './parent/parent.component';
 
 const routes: Routes = [
   // default routing
   {path:'',component:LoginComponent},
-  {path:'dashboard',component:DashboardComponent,children:[
+  {path:'dashboard',component:DashboardComponent,canActivate:[AuthenticationGuard],children:[
     // child routing
     {path:'home',component:HomeComponent},
     {path:'gallery',component:GalleryComponent},
@@ -25,6 +29,10 @@ const routes: Routes = [
     {path:'vehicles',component:VehiclesComponent},
     {path:'create-vehicle',component:CreateVehicleComponent},
     {path:'create-user',component:CreateUserComponent},
+    {path:'vehicle-details/:id',component:VehicleDetailsComponent},
+    {path:'edit-vehicle/:id',component:CreateVehicleComponent},
+    {path:'sibling',component:Sibling1Component},
+    {path:'parent',component:ParentComponent},
   ]},//parent routing
   
   {path:'**',component:ErrorComponent},//wildcard/error routing

@@ -1,0 +1,6 @@
+<p>parent works!</p>
+<!-- <app-child [count]="26" (countEvent)="count($event)"></app-child> -->
+
+<input type="number" [(ngModel)]="parent">
+<h3>{{child}}</h3>
+<app-child [num1]="parent" (numEvent)="catch($event)"></app-child>
