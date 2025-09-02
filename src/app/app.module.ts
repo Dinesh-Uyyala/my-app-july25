@@ -14,7 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectivesComponent } from './directives/directives.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
@@ -23,6 +23,9 @@ import { Sibling2Component } from './sibling2/sibling2.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { AboutUsModule } from './about-us/about-us.module';
+import { CapitalDirective } from './capital.directive';
+import { RupeePipe } from './rupee.pipe';
+import { TokenInterceptor } from './token.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +45,9 @@ import { AboutUsModule } from './about-us/about-us.module';
     Sibling1Component,
     Sibling2Component,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    CapitalDirective,
+    RupeePipe
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,13 @@ import { AboutUsModule } from './about-us/about-us.module';
     ReactiveFormsModule,
     AboutUsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
