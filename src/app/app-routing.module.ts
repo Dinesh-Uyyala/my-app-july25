@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'dashboard',component:DashboardComponent,canActivate:[AuthenticationGuard],children:[
     // child routing
-    {path:'',component:HomeComponent},
+    {path:'home',component:HomeComponent},
     {path:'gallery',component:GalleryComponent},
     {path:'data-binding',component:DataBindingComponent},
     {path:'directives',component:DirectivesComponent},
