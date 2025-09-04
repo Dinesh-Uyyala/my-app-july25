@@ -109,3 +109,19 @@ Control:
 1) FormGroup : userForm.get('name')
 2) Nested FormGroup: userForm.get('address')?.get('pin')
 3) FormArray: cardsFormArray.controls[i]?.get('expiry')
+
+
+
+
+
+
+Life Cycle Hooks:
+=================
+1) ngonchanges -- trigger when parent-child value changes
+2) ngonint -- initialization
+3) ngdocheck -- when changes happen
+4) ngaftercontentinit -- when content comes to component
+5) ngaftercontentchecked -- when content changes to component
+6) ngafterviewinit -- when view renders
+7) ngafterviewchecked -- when view value changes
+8) ngondestroy -- when component destroys

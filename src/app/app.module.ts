@@ -26,6 +26,7 @@ import { AboutUsModule } from './about-us/about-us.module';
 import { CapitalDirective } from './capital.directive';
 import { RupeePipe } from './rupee.pipe';
 import { TokenInterceptor } from './token.interceptor';
+import { HooksComponent } from './hooks/hooks.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,8 @@ import { TokenInterceptor } from './token.interceptor';
     ParentComponent,
     ChildComponent,
     CapitalDirective,
-    RupeePipe
+    RupeePipe,
+    HooksComponent
   ],
   imports: [
     BrowserModule,
