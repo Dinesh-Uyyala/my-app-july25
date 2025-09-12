@@ -1,0 +1,71 @@
+<!-- <form [formGroup]="stateForm">
+  <mat-form-field appearance="fill">
+    <mat-label>States Group</mat-label>
+    <input type="text"
+           matInput
+           formControlName="stateGroup"
+           required
+           [matAutocomplete]="autoGroup">
+      <mat-autocomplete #autoGroup="matAutocomplete">
+        <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
+          <mat-option *ngFor="let name of group.names" [value]="name">
+            {{name}}
+          </mat-option>
+      </mat-optgroup>
+    </mat-autocomplete>
+  </mat-form-field>
+</form> -->
+
+  <div matBadge="279877" matBadgeOverlap="false" class="demo-section">Text with a badge</div>
+
+  <div matBadge="1" matBadgeSize="large" class="demo-section">Text with large badge</div>
+
+<div class="demo-section">
+  Button with a badge on the left
+  <button mat-raised-button color="primary"
+      matBadge="8" matBadgePosition="before" matBadgeColor="accent">
+    Action
+  </button>
+</div>
+
+<div class="demo-section">
+    Button toggles badge visibility
+    <button mat-raised-button matBadge="7" [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()">
+        Hide
+    </button>
+  </div>
+
+<div class="demo-section">
+  Icon with a badge
+  <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
+    <!-- Include text description of the icon's meaning for screen-readers -->
+    <span class="cdk-visually-hidden">
+      Example with a home icon with overlaid badge showing the number 15
+    </span>
+</div>
+
+
+<p>You have received a file called "cat-picture.jpeg".</p>
+
+<button mat-raised-button (click)="openBottomSheet()">Open file</button>
+
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Shiba Inu</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+      bred for hunting.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>

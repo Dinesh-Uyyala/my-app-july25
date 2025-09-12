@@ -52,7 +52,7 @@
                 <td>{{employee.name}}</td>
                 <td [ngStyle]="{'color':employee.experience>=5?'green':'red'}">{{employee.experience}}</td>
                 <td [ngClass]="{'first':employee.package<500000,'second':(employee.package>=500000)&&(employee.package<1000000),
-                        'third':employee.package>1000000}">{{employee.package |currency }}</td>
+                        'third':employee.package>1000000}">{{employee.package |rupee }}</td>
                 <td>{{employee.role}}</td>
                 <td>
                     <button class="btn btn-danger" (click)="delete(i)">Delete</button>

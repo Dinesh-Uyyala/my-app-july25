@@ -23,6 +23,45 @@ Git Hub:
 
 
 
+45) Switch between branches(new)
+    check current branch( git branch )
+    create branch in GitHub
+    git fetch
+    git checkout branchName(use this for existing)
+
+5)  Pull request
+    pull request
+    approve
+    merge
+
+6)  Merge conflicts
+    checkout to the branch
+    git pull origin branchName
+    accept current/ accept incoming/ accept both
+    git push
+
+7) switch to another branch
+    commit or push to switch
+    git stash --include-untracked
+    do the changes
+    switch to old branch
+    git stash pop 
+
+8) Delete commit
+    git log abcd5242 abg6565
+    git reset abg6565
+
+9) move commit to another branch
+    git cherry-pick abg6565
+
+10) two branches  code into one branch
+    create 3rd branch and checkout
+    git pull origin feature/one
+    git pull origin feature/two
+
+
+
+
 Topics:
 =======
 
@@ -125,3 +164,32 @@ Life Cycle Hooks:
 6) ngafterviewinit -- when view renders
 7) ngafterviewchecked -- when view value changes
 8) ngondestroy -- when component destroys
+
+
+
+RxJS Operators:
+===============
+from, of --> creational operators
+map --> to alter every data / element
+filter --> to select some data
+
+
+forkJoin --> to do multiple API calls
+
+return forkJoin(
+    this.http.get('api1'),
+    this.http.get('api2'),
+    this.http.get('api3'),
+)
+
+concatMap --> sequential API calls
+
+return concatMap(
+    this.http.get('api1'),
+    this.http.get('api2'),
+    this.http.get('api3'),
+)
+
+switchMap --> switch between API calls(calls new API call)
+exhaustMap --> switch between API calls(calls old API call)
+debounceTime --> delays API call

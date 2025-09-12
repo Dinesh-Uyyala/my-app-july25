@@ -1,6 +1,6 @@
 <h1>Vehicles</h1>
 
-<input type="text" [(ngModel)]="searchKeyword" 
+<input type="text" [formControl]="searchKeyword"
             (keyup)="search()">
 
 <!-- vehicles sort -->
@@ -70,3 +70,5 @@
         </tr>
     </tbody>
 </table>
+
+<app-loading *ngIf="loading"></app-loading>

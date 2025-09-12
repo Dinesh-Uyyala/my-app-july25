@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { VehiclesService } from '../vehicles.service';
+import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { FormControl } from '@angular/forms';
+import { debounceTime, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-vehicles',
@@ -7,6 +10,7 @@ import { VehiclesService } from '../vehicles.service';
   styleUrls: ['./vehicles.component.css']
 })
 export class VehiclesComponent {
+  loading:boolean=true;
 vehicles:any[]=[];
   constructor(private _vehiclesService:VehiclesService){
     this.loadVehicles();
@@ -16,6 +20,7 @@ loadVehicles(){
       (data:any)=>{
         console.log(data);
         this.vehicles=data;
+        this.loading=false;
         console.log("vehicles data:",this.vehicles);
       },(err:any)=>{
         alert("Internal Server Error");
@@ -39,17 +44,17 @@ delete(id:any){
     }
   }
 
-  searchKeyword:string='';
+  searchKeyword=new FormControl();
   search(){
-    // alert(this.term)
-    this._vehiclesService.getFilteredVehicles(this.searchKeyword)
-      .subscribe((data:any)=>{
-        console.log(data); 
-        this.vehicles=data;
-      },(err:any)=>{
-        alert("Internal Server Error!") 
-      }
-    )
+    this.searchKeyword.valueChanges.pipe(
+      debounceTime(400),
+      switchMap((search)=>this._vehiclesService.getFilteredVehicles(search))).subscribe(
+        (data:any)=>{
+          this.vehicles=data;
+        },(err:any)=>{
+          alert("Internal Server Error")
+        }
+      )
   }
 
 

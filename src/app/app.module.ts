@@ -27,8 +27,25 @@ import { CapitalDirective } from './capital.directive';
 import { RupeePipe } from './rupee.pipe';
 import { TokenInterceptor } from './token.interceptor';
 import { HooksComponent } from './hooks/hooks.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialComponent } from './material/material.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from "@angular/material/icon";
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import { MatCardModule } from "@angular/material/card";
+import { TextAreaComponent } from './text-area/text-area.component';
+import { LoadingComponent } from './loading/loading.component';
+import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './store/counter.reducer';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     LoginComponent,
     DashboardComponent,
@@ -49,22 +66,38 @@ import { HooksComponent } from './hooks/hooks.component';
     ChildComponent,
     CapitalDirective,
     RupeePipe,
-    HooksComponent
-  ],
+    HooksComponent,
+    MaterialComponent,
+    TextAreaComponent,
+    LoadingComponent,
+    AdminComponent,
+    UserComponent,
+    HeaderComponent,
+    FooterComponent,
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AboutUsModule
+    AboutUsModule,
+    BrowserAnimationsModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatBadgeModule,
+    MatButtonModule,
+    MatIconModule,
+    MatBottomSheetModule,
+    MatCardModule,
+    StoreModule.forRoot({count:counterReducer}, {})
   ],
   providers: [
     {
       provide:HTTP_INTERCEPTORS,
       useClass:TokenInterceptor,
       multi:true
-    }
+    },
   ],
   bootstrap: [AppComponent]
 })
