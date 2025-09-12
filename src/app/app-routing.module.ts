@@ -16,6 +16,7 @@ import { AuthenticationGuard } from './authentication.guard';
 import { Sibling1Component } from './sibling1/sibling1.component';
 import { ParentComponent } from './parent/parent.component';
 import { HooksComponent } from './hooks/hooks.component';
+import { MaterialComponent } from './material/material.component';
 
 const routes: Routes = [
   // default routing
@@ -34,6 +35,7 @@ const routes: Routes = [
     {path:'edit-vehicle/:id',component:CreateVehicleComponent},
     {path:'sibling',component:Sibling1Component},
     {path:'parent',component:ParentComponent},
+    {path:'material',component:MaterialComponent},
     {path:'hooks',component:HooksComponent},
     {
     path: 'payments',

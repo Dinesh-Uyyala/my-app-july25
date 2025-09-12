@@ -66,5 +66,5 @@
 </div>
 </div>
     <button (click)="submit()" 
-            class="btn btn-success">Submit</button>
+            class="btn btn-success" [disabled]="userForm.invalid">Submit</button>
 </form>
